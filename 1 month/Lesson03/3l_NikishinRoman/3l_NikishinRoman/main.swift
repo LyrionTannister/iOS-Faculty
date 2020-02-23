@@ -24,89 +24,45 @@ enum EngineState {
     case start
     case stop
 }
+enum WindowsState {
+    case open
+    case closed
+}
+enum TrunkManipulations {
+    // TODO Реализовать метод указания количества груза
+    case load
+    case unload
+}
 
 enum CarState{
     case new
-    case secondhand
-}
-
-enum Brand: String {
-    case bmw = "BMW"
-    case mercedes = "Mercedes-Benz"
-    case audi = "Audi"
-    case vw = "Volkswagen"
-    
-    var name: String {
-        return ("Имя бренда: \(rawValue)")
-    }
+    case used {var odo: Int}
 }
 
 struct Car {
-    var brand: Brand
+    var brand: String
     var model: String
     var color: String
-    var mileage: CarState = .new
-        
-    var price: Int = 500_000
-        private(set) var currentDiscount: Int = 0
+    var mileage: CarState
+    var price: Int
 
-//    var discont: Int {
-//        get {
-//            return currentDiscount
-//        }
-//        set {
-//        if currentDiscount != 0 {
-//              price += price / (100 - currentDiscount) * 100
-//          }
-//          guard discount = newValue == 0 ? 1 : newValue
-//          currentDiscount = discount
-//            price = (price / discount)
-//        }
-    private(set) var engineState: EngineState = .stop {
-        willSet{
-            print("Engine state will be changed from \(EngineState) to \(newValue)")
-        }
-        didSet {
-            print("Engine state changed from \(oldValue) to \(EngineState)")
-        }
-    }
-    mutating func changeEngineState(){
-        if EngineState == .stop {
-            EngineState = .start
-        } else {
-            EngineState = .stop
-        }
-    }
-    init(brand: Brand, model: Model, color: String, mileage: CarState = .new, price: Int){
+    private(set) var engineState: EngineState = .stop
+    
+
+    init(brand: String, model: String, color: String, mileage: CarState = .new, price: Int){
         self.brand = brand
-//        self.model = model
+        self.model = model
         self.color = color
         self.mileage = mileage
         self.price = price
     }
-    init?(brand: Brand){
-        guard brand == .bmw else { return nil}
-            self.brand = .bmw
-        self.model = "X7"
-        self.color = "White"
-        self.mileage = .new
-        self.price =
+
+    mutating func changeEngineState(){
+        if engineState == .stop {
+            engineState = .start
+        } else {
+            engineState = .stop
         }
-        
     }
 }
-
-
-
-
-var state = CarState.secondHand(odd: 15_000)
-switch state {
-case .new:
-    print()
-}
-
-var brand1 = Brand.mercedes
-brand1.name
-
-var car = Car(brand: .bmw, model: "X5", color: "black", mileage: .secondHand(odd: 100_000), price: 1_000_000, )
-car
+var car = Car(brand: "Audi", model: "A4", color: "black", mileage: .used(odo: 50_000), price: 1_000_000)
