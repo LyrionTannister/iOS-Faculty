@@ -48,8 +48,8 @@ class Car {
     var price: Int
     
 
-    private(set) var engineState: EngineState
-    private(set) var windowsState: WindowsState
+    var engineState: EngineState
+    var windowsState: WindowsState
     
 
     init(brand: String,
@@ -82,10 +82,56 @@ class Car {
 /// 2. Описать пару его наследников CargoTruck и sportСar. Подумать, какими отличительными свойствами обладают эти автомобили. Описать в каждом наследнике специфичные для него свойства.
 
 class CargoTruck: Car {
-    private(set) var trunkVolume: Int
-    private(set) var trunkLoadedVolume: Int
+    private(set) var trunkVolume: Double
+    private(set) var trunkLoadedVolume: Double
+    
+    enum Actions {
+        case changeEngineState
+        case changeWindowsState
+        case loadTrun(tons: Double)
+        case enableLaunch
+        case setRevsForLaunch(revs: Int)
+    }
+    
+    init(trunkVolume: Double, trunkLoadedVolume: Double) {
+        self.trunkVolume = trunkVolume
+        self.trunkLoadedVolume = trunkLoadedVolume
+    }
+    
     /// 3. Взять из прошлого урока enum с действиями над автомобилем. Подумать, какие особенные действия имеет CargoTruck. Добавить эти действия в перечисление.
-    override func action (){
+    func action (_ action: Actions){
+        switch action {
+        case .changeEngineState:
+            if engineState == .stopped {
+                engineState = .started
+                print("Engine started")
+            } else {
+                engineState = .stopped
+                print("Enngine stopped")
+            }
+        case .changeWindowsState:
+            if windowsState == .closed {
+                windowsState = .opened
+                print("Windows opened")
+            } else {
+                windowsState = .closed
+                print("Windows closed")
+            }
+        case .loadTrunk(let loadingWeight):
+            if trunkVolume < loadingWeight {
+                print("Your luggage is larger than trunk!")
+            } else {
+                trunkLoadedVolume += loadingWeight
+                print("Free space left: \(trunkVolume - trunkLoadedVolume) liters")
+            }
+        case .unloadTrunk(let unloadedWeight):
+            if trunkLoadedVolume - unloadedWeight >= 0 {
+                trunkLoadedVolume -= unloadedWeight
+                print("Free space left: \(trunkVolume - trunkLoadedVolume) liters")
+            } else {
+                print("You cannot unload such amount, it's larger than \(trunkVolume - trunkLoadedVolume) liters left")
+            }
+        }
     }
     
     override func description() {
@@ -97,7 +143,41 @@ class SportCar: Car {
     private(set) var revsOflaunchControl: Int
     private(set) var boostControl: Bool
     
-    override func action (){
+    enum Actions {
+        case changeEngineState
+        case changeWindowsState
+        case enableBoost
+        case enableLaunch
+        case setRevsForLaunch(revs: Int)
+    }
+    
+    init(launchControl: Bool, boostControl: Bool, revsOflaunchControl: Int = 3000) {
+        self.launchControl = launchControl
+        self.boostControl = boostControl
+        self.revsOflaunchControl = revsOflaunchControl
+    }
+    ///3. Взять из прошлого урока enum с действиями над автомобилем. Подумать, какие особенные действия имеет sportCar. Добавить эти действия в перечисление.
+    func action (_ actions: Actions){
+        switch actions {
+        case .changeEngineState:
+            if engineState == .stopped {
+                self.engineState = .started
+                print("Engine started")
+            } else {
+                engineState = .stopped
+                print("Enngine stopped")
+            }
+        case .changeWindowsState:
+            <#code#>
+        case .nableBoost:
+            <#code#>
+        case .enableLaunch:
+            <#code#>
+        case .setRevsForLaunch(let revs):
+            <#code#>
+default:
+            <#code#>
+        }
     }
     override func description() {
     }
@@ -122,36 +202,5 @@ class SportCar: Car {
     }
 
     fileprivate func actions() {
-        switch action {
-        case .changeEngineState:
-            if engineState == .stopped {
-                engineState = .started
-                print("Engine started")
-            } else {
-                engineState = .stopped
-                print("Enngine stopped")
-            }
-        case .changeWindowsState:
-            if windowsState == .closed {
-                windowsState = .open
-                print("Windows opened")
-            } else {
-                windowsState = .closed
-                print("Windows closed")
-            }
-        case .loadTrunk(let loadingWeight):
-            if trunkVolume < loadingWeight {
-                print("Your luggage is larger than trunk!")
-            } else {
-                trunkLoadedVolume += loadingWeight
-                print("Free space left: \(trunkVolume - trunkLoadedVolume) liters")
-            }
-        case .unloadTrunk(let unloadedWeight):
-            if trunkLoadedVolume - unloadedWeight >= 0 {
-                trunkLoadedVolume -= unloadedWeight
-                print("Free space left: \(trunkVolume - trunkLoadedVolume) liters")
-            } else {
-                print("You cannot unload such amount, it's larger than \(trunkVolume - trunkLoadedVolume) liters left")
-            }
-        }
+        
 }
