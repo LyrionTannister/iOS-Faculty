@@ -7,21 +7,14 @@
 //
 
 /*
-
  3. Описать перечисление с возможными действиями с автомобилем: запустить/заглушить двигатель, открыть/закрыть окна, погрузить/выгрузить из кузова/багажника груз определенного объема.
- 4. Добавить в структуры метод с одним аргументом типа перечисления, который будет менять свойства структуры в зависимости от действия.
- 5. Инициализировать несколько экземпляров структур. Применить к ним различные действия.
- 6. Вывести значения свойств экземпляров в консоль.
-
  */
 
 import Foundation
 
-
-
 enum EngineState {
-    case start
-    case stop
+    case started
+    case stopped
 }
 enum WindowsState {
     case open
@@ -59,7 +52,7 @@ struct Car {
     private(set) var trunkVolume: Int
     private(set) var trunkLoadedVolume: Int
 
-    private(set) var engineState: EngineState = .stop
+    private(set) var engineState: EngineState = .stopped
     private(set) var windowsState: WindowsState = .closed
     
 
@@ -80,18 +73,19 @@ struct Car {
         self.trunkVolume = trunkVolume
         
         self.trunkLoadedVolume = 0
-        self.engineState = .stop
+        self.engineState = .stopped
         self.windowsState = .closed
     }
     
+//     4. Добавить в структуры метод с одним аргументом типа перечисления, который будет менять свойства структуры в зависимости от действия.
     mutating func action (_ action: Actions){
         switch action {
         case .changeEngineState:
-            if engineState == .stop {
-                engineState = .start
+            if engineState == .stopped {
+                engineState = .started
                 print("Engine started")
             } else {
-                engineState = .stop
+                engineState = .stopped
                 print("Enngine stopped")
             }
         case .changeWindowsState:
@@ -136,6 +130,7 @@ struct Car {
         
     }
 }
+
 struct Truck {
     var brand: String
     var model: String
@@ -147,7 +142,7 @@ struct Truck {
     var trunkVolume: Double
     private(set) var trunkLoadedVolume: Double
 
-    private(set) var engineState: EngineState = .stop
+    private(set) var engineState: EngineState = .stopped
     private(set) var windowsState: WindowsState = .closed
     
 
@@ -168,15 +163,15 @@ struct Truck {
         self.trunkVolume = trunkVolume
         
         self.trunkLoadedVolume = 0.0
-        self.engineState = .stop
+        self.engineState = .stopped
         self.windowsState = .closed
     }
 
     mutating func changeEngineState(){
-        if engineState == .stop {
-            engineState = .start
+        if engineState == .stopped {
+            engineState = .started
         } else {
-            engineState = .stop
+            engineState = .stopped
         }
     }
     mutating func changeWindowsState(){
@@ -195,5 +190,19 @@ struct Truck {
 //    }
 }
 
-var car = Car(brand: "Audi", model: "A4", year: 2018, color: "black", mileage: .used(odo: 50_000), price: 1_000_000, trunkVolume: 480.0)
+// 5. Инициализировать несколько экземпляров структур. Применить к ним различные действия.
+var audiA4_2018 = Car(brand: "Audi", model: "A4", year: 2018, color: "black", mileage: .used(odo: 50_000), price: 1_000_000, trunkVolume: 480)
+var bmwX3new = Car(brand: "BMW", model: "X3", year: 2020, color: "White", mileage: .new, price: 2_800_000, trunkVolume: 750)
+
 var truck = Truck(brand: "Scania", model: "A200", year: 2014, color: "Red", mileage: .used(odo: 500_000), price: 9_000_000, trunkVolume: 50000.0)
+
+// 5. Применить к ним различные действия.
+audiA4_2018.action(.changeEngineState)
+bmwX3new.action(.loadTrunk(700))
+audiA4_2018.action(.loadTrunk(700))
+bmwX3new.action(.changeWindowsState)
+
+
+// 6. Вывести значения свойств экземпляров в консоль.
+audiA4_2018.description()
+bmwX3new.description()
