@@ -20,10 +20,7 @@ enum WindowsState {
     case open
     case closed
 }
-//enum TrunkVolume {
-//    case empty
-//    case loaded(amount: Int)
-//}
+
 enum CarState{
     case new
     case used(odo: Int)
@@ -181,13 +178,22 @@ struct Truck {
             windowsState = .closed
         }
     }
-//    mutating func manipulateWithTrunk(){
-//        if windowsState == .closed {
-//            windowsState = .open
-//        } else {
-//            windowsState = .closed
-//        }
-//    }
+    mutating func loadCargo(kilos: Double){
+        if trunkLoadedVolume + kilos > trunkVolume {
+            print("Cargo is larger than trunk")
+        } else {
+            trunkLoadedVolume += kilos
+            print("\(trunkVolume - trunkLoadedVolume) kilos left in trunk")
+        }
+    }
+    mutating func unLoadCargo(kilos: Double){
+        if trunkLoadedVolume - kilos < 0 {
+            print("Unload volume is larger than loaded cargo")
+        } else {
+            trunkLoadedVolume -= kilos
+            print("\(trunkVolume - trunkLoadedVolume) kilos left in trunk")
+        }
+    }
 }
 
 // 5. Инициализировать несколько экземпляров структур. Применить к ним различные действия.
@@ -206,3 +212,9 @@ bmwX3new.action(.changeWindowsState)
 // 6. Вывести значения свойств экземпляров в консоль.
 audiA4_2018.description()
 bmwX3new.description()
+
+var scania = Truck(brand: "Scania", model: "F3", year: 2018, color: "Lime", mileage: .used(odo: 560_000), price: 4_699_999, trunkVolume: 5000)
+scania.loadCargo(kilos: 6000)
+scania.loadCargo(kilos: 4000)
+scania.unLoadCargo(kilos: 4001)
+scania.unLoadCargo(kilos: 4000)
