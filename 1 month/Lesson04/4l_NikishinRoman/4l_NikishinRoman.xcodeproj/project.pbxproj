@@ -7,11 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
 		09A0E68224044C0500B17A73 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A0E68124044C0500B17A73 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		09A0E67C24044C0500B17A73 /* CopyFiles */ = {
+=======
+		09A0E66F2404419400B17A73 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A0E66E2404419400B17A73 /* main.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		09A0E6692404419400B17A73 /* CopyFiles */ = {
+>>>>>>> master
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -23,12 +31,21 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
 		09A0E67E24044C0500B17A73 /* 4l_NikishinRoman */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 4l_NikishinRoman; sourceTree = BUILT_PRODUCTS_DIR; };
 		09A0E68124044C0500B17A73 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		09A0E67B24044C0500B17A73 /* Frameworks */ = {
+=======
+		09A0E66B2404419400B17A73 /* 4l_NikishinRoman */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 4l_NikishinRoman; sourceTree = BUILT_PRODUCTS_DIR; };
+		09A0E66E2404419400B17A73 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		09A0E6682404419400B17A73 /* Frameworks */ = {
+>>>>>>> master
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -38,6 +55,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+<<<<<<< HEAD
 		09A0E67524044C0500B17A73 = {
 			isa = PBXGroup;
 			children = (
@@ -50,14 +68,35 @@
 			isa = PBXGroup;
 			children = (
 				09A0E67E24044C0500B17A73 /* 4l_NikishinRoman */,
+=======
+		09A0E6622404419400B17A73 = {
+			isa = PBXGroup;
+			children = (
+				09A0E66D2404419400B17A73 /* 4l_NikishinRoman */,
+				09A0E66C2404419400B17A73 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		09A0E66C2404419400B17A73 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				09A0E66B2404419400B17A73 /* 4l_NikishinRoman */,
+>>>>>>> master
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		09A0E68024044C0500B17A73 /* 4l_NikishinRoman */ = {
 			isa = PBXGroup;
 			children = (
 				09A0E68124044C0500B17A73 /* main.swift */,
+=======
+		09A0E66D2404419400B17A73 /* 4l_NikishinRoman */ = {
+			isa = PBXGroup;
+			children = (
+				09A0E66E2404419400B17A73 /* main.swift */,
+>>>>>>> master
 			);
 			path = 4l_NikishinRoman;
 			sourceTree = "<group>";
@@ -65,6 +104,7 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+<<<<<<< HEAD
 		09A0E67D24044C0500B17A73 /* 4l_NikishinRoman */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09A0E68524044C0500B17A73 /* Build configuration list for PBXNativeTarget "4l_NikishinRoman" */;
@@ -72,6 +112,15 @@
 				09A0E67A24044C0500B17A73 /* Sources */,
 				09A0E67B24044C0500B17A73 /* Frameworks */,
 				09A0E67C24044C0500B17A73 /* CopyFiles */,
+=======
+		09A0E66A2404419400B17A73 /* 4l_NikishinRoman */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 09A0E6722404419400B17A73 /* Build configuration list for PBXNativeTarget "4l_NikishinRoman" */;
+			buildPhases = (
+				09A0E6672404419400B17A73 /* Sources */,
+				09A0E6682404419400B17A73 /* Frameworks */,
+				09A0E6692404419400B17A73 /* CopyFiles */,
+>>>>>>> master
 			);
 			buildRules = (
 			);
@@ -79,25 +128,41 @@
 			);
 			name = 4l_NikishinRoman;
 			productName = 4l_NikishinRoman;
+<<<<<<< HEAD
 			productReference = 09A0E67E24044C0500B17A73 /* 4l_NikishinRoman */;
+=======
+			productReference = 09A0E66B2404419400B17A73 /* 4l_NikishinRoman */;
+>>>>>>> master
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
+<<<<<<< HEAD
 		09A0E67624044C0500B17A73 /* Project object */ = {
+=======
+		09A0E6632404419400B17A73 /* Project object */ = {
+>>>>>>> master
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1120;
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Roman Nikishin";
 				TargetAttributes = {
+<<<<<<< HEAD
 					09A0E67D24044C0500B17A73 = {
+=======
+					09A0E66A2404419400B17A73 = {
+>>>>>>> master
 						CreatedOnToolsVersion = 11.2.1;
 					};
 				};
 			};
+<<<<<<< HEAD
 			buildConfigurationList = 09A0E67924044C0500B17A73 /* Build configuration list for PBXProject "4l_NikishinRoman" */;
+=======
+			buildConfigurationList = 09A0E6662404419400B17A73 /* Build configuration list for PBXProject "4l_NikishinRoman" */;
+>>>>>>> master
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -105,29 +170,50 @@
 				en,
 				Base,
 			);
+<<<<<<< HEAD
 			mainGroup = 09A0E67524044C0500B17A73;
 			productRefGroup = 09A0E67F24044C0500B17A73 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				09A0E67D24044C0500B17A73 /* 4l_NikishinRoman */,
+=======
+			mainGroup = 09A0E6622404419400B17A73;
+			productRefGroup = 09A0E66C2404419400B17A73 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				09A0E66A2404419400B17A73 /* 4l_NikishinRoman */,
+>>>>>>> master
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+<<<<<<< HEAD
 		09A0E67A24044C0500B17A73 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				09A0E68224044C0500B17A73 /* main.swift in Sources */,
+=======
+		09A0E6672404419400B17A73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09A0E66F2404419400B17A73 /* main.swift in Sources */,
+>>>>>>> master
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+<<<<<<< HEAD
 		09A0E68324044C0500B17A73 /* Debug */ = {
+=======
+		09A0E6702404419400B17A73 /* Debug */ = {
+>>>>>>> master
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -187,7 +273,11 @@
 			};
 			name = Debug;
 		};
+<<<<<<< HEAD
 		09A0E68424044C0500B17A73 /* Release */ = {
+=======
+		09A0E6712404419400B17A73 /* Release */ = {
+>>>>>>> master
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -240,7 +330,11 @@
 			};
 			name = Release;
 		};
+<<<<<<< HEAD
 		09A0E68624044C0500B17A73 /* Debug */ = {
+=======
+		09A0E6732404419400B17A73 /* Debug */ = {
+>>>>>>> master
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -249,7 +343,11 @@
 			};
 			name = Debug;
 		};
+<<<<<<< HEAD
 		09A0E68724044C0500B17A73 /* Release */ = {
+=======
+		09A0E6742404419400B17A73 /* Release */ = {
+>>>>>>> master
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -261,25 +359,45 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+<<<<<<< HEAD
 		09A0E67924044C0500B17A73 /* Build configuration list for PBXProject "4l_NikishinRoman" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				09A0E68324044C0500B17A73 /* Debug */,
 				09A0E68424044C0500B17A73 /* Release */,
+=======
+		09A0E6662404419400B17A73 /* Build configuration list for PBXProject "4l_NikishinRoman" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09A0E6702404419400B17A73 /* Debug */,
+				09A0E6712404419400B17A73 /* Release */,
+>>>>>>> master
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+<<<<<<< HEAD
 		09A0E68524044C0500B17A73 /* Build configuration list for PBXNativeTarget "4l_NikishinRoman" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				09A0E68624044C0500B17A73 /* Debug */,
 				09A0E68724044C0500B17A73 /* Release */,
+=======
+		09A0E6722404419400B17A73 /* Build configuration list for PBXNativeTarget "4l_NikishinRoman" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09A0E6732404419400B17A73 /* Debug */,
+				09A0E6742404419400B17A73 /* Release */,
+>>>>>>> master
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
+<<<<<<< HEAD
 	rootObject = 09A0E67624044C0500B17A73 /* Project object */;
+=======
+	rootObject = 09A0E6632404419400B17A73 /* Project object */;
+>>>>>>> master
 }
