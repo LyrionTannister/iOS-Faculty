@@ -11,3 +11,15 @@
  3. * Добавить свой subscript, который будет возвращать nil в случае обращения к несуществующему индексу.
  */
 
+struct Queue<T> {
+    private var elements: [T] = []
+    
+    mutating func push(_ element: T){
+        elements.append(element)
+    }
+    
+    mutating func pop() -> T? {
+        guard elements.isEmpty == false else { return nil }
+        return elements.removeFirst()
+    }
+}
