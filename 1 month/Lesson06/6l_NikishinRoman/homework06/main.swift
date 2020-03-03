@@ -5,11 +5,6 @@
 //  Created by Admin on 02.03.2020.
 //  Copyright © 2020 Nikishin Roman. All rights reserved.
 //
-/*
- 
- 2. Добавить ему несколько методов высшего порядка, полезных для этой коллекции (пример: filter для массивов)
- 3. * Добавить свой subscript, который будет возвращать nil в случае обращения к несуществующему индексу.
- */
 
 protocol Discs {
     var volume: Int {get}
@@ -38,15 +33,31 @@ struct BlueRay: Discs {
 }
 
 // 1. Реализовать свой тип коллекции «очередь» (queue) c использованием дженериков.
-struct Queue<D: Discs> {
+struct Queue<D> {
     private var elements: [D] = []
     
-    mutating func push(_ element: D){
+    mutating func addToQueue(_ element: D){
         elements.append(element)
     }
     
-    mutating func pop() -> D? {
+    mutating func removeFromQueue() -> D? {
         guard elements.isEmpty == false else { return nil }
         return elements.removeFirst()
     }
+// 3. * Добавить свой subscript, который будет возвращать nil в случае обращения к несуществующему индексу.
+    subscript(element index: Int) -> D? {
+        if (index > elements.count - 1), (index < 1) {
+            return nil
+        }
+        return elements[index - 1]
+    }
 }
+
+var bulk = Queue<Discs>()
+bulk.addToQueue(DVD(volume: 8_500, type: "DVD-R DL"))
+bulk.addToQueue(CD(volume: 600, type: "CD-RW"))
+bulk.addToQueue(BlueRay(volume: 50_000, type: "BD-RE DL"))
+print(bulk[element: 1] ?? "No discs")
+print(bulk[element: 2]!)
+print(bulk[element: 3] as Any)
+// 2. Добавить ему несколько методов высшего порядка, полезных для этой коллекции (пример: filter для массивов)
