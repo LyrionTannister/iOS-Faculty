@@ -46,10 +46,7 @@ struct Queue<D> {
     }
 // 3. * Добавить свой subscript, который будет возвращать nil в случае обращения к несуществующему индексу.
     subscript(element index: Int) -> D? {
-        if (index > elements.count - 1), (index < 1) {
-            return nil
-        }
-        return elements[index - 1]
+        (index > elements.count) || (index < 1) ? {return nil}() : {return elements[index - 1]}()
     }
 }
 
@@ -57,7 +54,12 @@ var bulk = Queue<Discs>()
 bulk.addToQueue(DVD(volume: 8_500, type: "DVD-R DL"))
 bulk.addToQueue(CD(volume: 600, type: "CD-RW"))
 bulk.addToQueue(BlueRay(volume: 50_000, type: "BD-RE DL"))
+
 print(bulk[element: 1] ?? "No discs")
 print(bulk[element: 2]!)
 print(bulk[element: 3] as Any)
+print(bulk[element: 4] ?? "No discs")
+print(bulk[element: 0] ?? "No discs")
+
+
 // 2. Добавить ему несколько методов высшего порядка, полезных для этой коллекции (пример: filter для массивов)
