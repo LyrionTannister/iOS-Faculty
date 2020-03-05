@@ -44,9 +44,15 @@ struct Queue<D> {
         guard elements.isEmpty == false else { return nil }
         return elements.removeFirst()
     }
+    
+// 2. Добавить ему несколько методов высшего порядка, полезных для этой коллекции (пример: filter для массивов)
+//    mutating func filter(type: (D) -> Bool) -> D {
+//        elements.filter(_ )
+//    }
+    
 // 3. * Добавить свой subscript, который будет возвращать nil в случае обращения к несуществующему индексу.
     subscript(element index: Int) -> D? {
-        (index > elements.count) || (index < 1) ? {return nil}() : {return elements[index - 1]}()
+        index > elements.count || (index < 1) ? nil : elements[index - 1]
     }
 }
 
@@ -55,11 +61,9 @@ bulk.addToQueue(DVD(volume: 8_500, type: "DVD-R DL"))
 bulk.addToQueue(CD(volume: 600, type: "CD-RW"))
 bulk.addToQueue(BlueRay(volume: 50_000, type: "BD-RE DL"))
 
-print(bulk[element: 1] ?? "No discs")
+print(bulk[element: 1] ?? "No disc")
 print(bulk[element: 2]!)
 print(bulk[element: 3] as Any)
-print(bulk[element: 4] ?? "No discs")
-print(bulk[element: 0] ?? "No discs")
+print(bulk[element: 4] ?? "No disc")
+print(bulk[element: 0] ?? "No disc")
 
-
-// 2. Добавить ему несколько методов высшего порядка, полезных для этой коллекции (пример: filter для массивов)
