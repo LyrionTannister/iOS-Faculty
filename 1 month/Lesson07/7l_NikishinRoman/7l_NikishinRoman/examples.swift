@@ -61,38 +61,40 @@ func buyFavoriteSnack(person: String, vendingMachine: VendingMachine) throws -> 
     return try vendingMachine.vend(item: name)!
 }
 
-var machine = VendingMachine()
-
-machine.deposite = 50
-//print("\(String(describing: try? machine.vend(item: "Pringles")))")
-//print("\(String(describing: try? machine.vend(item: "Yoghurt")))")
-//print("\(String(describing: try? machine.vend(item: "Yoghurt")))")
-//print("\(String(describing: try? machine.vend(item: "Yoghurt")))")
-//
-//let vend1 = try? machine.vend(item: "Yoghurt")
-
-do {
-    try machine.vend(item: "Pocky")
-} catch VendingError.invalidSelection {
-    print("Данного товара нет в списке предложенных")
-} catch VendingError.outOfStock {
-    print("Товар закончился")
-} catch VendingError.noMoneyNoHoney(let coinsNeeded) {
-    print("Необходимо внести \(coinsNeeded) монет")
-} catch {
-    print(error.localizedDescription)
-}
-
-do {
-    try buyFavoriteSnack(person: "Petr", vendingMachine: machine)
-} catch BuyError.customerNotFound {
-    print("Не найден такой покупатель")
-} catch VendingError.invalidSelection {
-    print("Данного товара нет в списке предложенных")
-} catch VendingError.outOfStock {
-    print("Товар закончился")
-} catch VendingError.noMoneyNoHoney(let coinsNeeded) {
-    print("Необходимо внести \(coinsNeeded) монет")
-} catch {
-    print(error.localizedDescription)
+func testSnackMachine() {
+    let machine = VendingMachine()
+    
+    machine.deposite = 50
+    //print("\(String(describing: try? machine.vend(item: "Pringles")))")
+    //print("\(String(describing: try? machine.vend(item: "Yoghurt")))")
+    //print("\(String(describing: try? machine.vend(item: "Yoghurt")))")
+    //print("\(String(describing: try? machine.vend(item: "Yoghurt")))")
+    //
+    //let vend1 = try? machine.vend(item: "Yoghurt")
+    
+    do {
+        try machine.vend(item: "Pocky")
+    } catch VendingError.invalidSelection {
+        print("Данного товара нет в списке предложенных")
+    } catch VendingError.outOfStock {
+        print("Товар закончился")
+    } catch VendingError.noMoneyNoHoney(let coinsNeeded) {
+        print("Необходимо внести \(coinsNeeded) монет")
+    } catch {
+        print(error.localizedDescription)
+    }
+    
+    do {
+        try buyFavoriteSnack(person: "Petr", vendingMachine: machine)
+    } catch BuyError.customerNotFound {
+        print("Не найден такой покупатель")
+    } catch VendingError.invalidSelection {
+        print("Данного товара нет в списке предложенных")
+    } catch VendingError.outOfStock {
+        print("Товар закончился")
+    } catch VendingError.noMoneyNoHoney(let coinsNeeded) {
+        print("Необходимо внести \(coinsNeeded) монет")
+    } catch {
+        print(error.localizedDescription)
+    }
 }
