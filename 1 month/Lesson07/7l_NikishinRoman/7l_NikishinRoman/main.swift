@@ -55,7 +55,7 @@ do  {
 }
 
 //2. Придумать класс, методы которого могут завершаться неудачей. Реализовать их с использованием Error.
-enum StackError {
+enum StackError: Error {
     case noMoreItems
 }
 
@@ -66,13 +66,14 @@ class Stack {
         elements.append(element)
     }
     
-    func removeFromStack() -> Int? {
-        guard elements.isEmpty == false else { return nil }
-        return elements.removeFirst()
+    func removeFromStack() -> (Int?,StackError?) {
+        guard elements.isEmpty == false else { return (nil, .noMoreItems) }
+        return (elements.removeFirst(), nil)
     }
 }
 
 let intStack  = Stack()
 intStack.addToStack(10)
-let a: Int = intStack.removeFromStack()!
-let b: Int = intStack.removeFromStack()!
+
+print("\(intStack.removeFromStack())")
+print("\(intStack.removeFromStack())")
