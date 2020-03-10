@@ -13,6 +13,10 @@
 		0937BFB22416AFDB0042A384 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0937BFB02416AFDB0042A384 /* Main.storyboard */; };
 		0937BFB42416AFE00042A384 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0937BFB32416AFE00042A384 /* Assets.xcassets */; };
 		0937BFB72416AFE00042A384 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0937BFB52416AFE00042A384 /* LaunchScreen.storyboard */; };
+		84D231782417F4BF00366228 /* Apple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D231772417F4BF00366228 /* Apple.swift */; };
+		84D2317A2418132800366228 /* SnakeBodyPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D231792418132800366228 /* SnakeBodyPart.swift */; };
+		84D2317C241814EF00366228 /* SnakeHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2317B241814EF00366228 /* SnakeHead.swift */; };
+		84D2317E2418155E00366228 /* Snake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2317D2418155E00366228 /* Snake.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		0937BFB32416AFE00042A384 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0937BFB62416AFE00042A384 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0937BFB82416AFE00042A384 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84D231772417F4BF00366228 /* Apple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apple.swift; sourceTree = "<group>"; };
+		84D231792418132800366228 /* SnakeBodyPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeBodyPart.swift; sourceTree = "<group>"; };
+		84D2317B241814EF00366228 /* SnakeHead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeHead.swift; sourceTree = "<group>"; };
+		84D2317D2418155E00366228 /* Snake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snake.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,12 +65,16 @@
 			isa = PBXGroup;
 			children = (
 				0937BFA62416AFDB0042A384 /* AppDelegate.swift */,
+				84D231772417F4BF00366228 /* Apple.swift */,
 				0937BFAC2416AFDB0042A384 /* GameScene.swift */,
 				0937BFAE2416AFDB0042A384 /* GameViewController.swift */,
 				0937BFB02416AFDB0042A384 /* Main.storyboard */,
 				0937BFB32416AFE00042A384 /* Assets.xcassets */,
 				0937BFB52416AFE00042A384 /* LaunchScreen.storyboard */,
 				0937BFB82416AFE00042A384 /* Info.plist */,
+				84D231792418132800366228 /* SnakeBodyPart.swift */,
+				84D2317B241814EF00366228 /* SnakeHead.swift */,
+				84D2317D2418155E00366228 /* Snake.swift */,
 			);
 			path = 8l_NikishinRoman;
 			sourceTree = "<group>";
@@ -138,8 +150,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84D2317C241814EF00366228 /* SnakeHead.swift in Sources */,
+				84D231782417F4BF00366228 /* Apple.swift in Sources */,
 				0937BFAD2416AFDB0042A384 /* GameScene.swift in Sources */,
 				0937BFAF2416AFDB0042A384 /* GameViewController.swift in Sources */,
+				84D2317A2418132800366228 /* SnakeBodyPart.swift in Sources */,
+				84D2317E2418155E00366228 /* Snake.swift in Sources */,
 				0937BFA72416AFDB0042A384 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
