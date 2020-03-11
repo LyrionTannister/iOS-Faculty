@@ -28,6 +28,9 @@ class GameScene: SKScene {
         physicsBody?.allowsRotation = false
         physicsWorld.contactDelegate = self
         
+        self.physicsBody?.categoryBitMask = CollisionCategories.EdgeOfScene
+        self.physicsBody?.collisionBitMask = CollisionCategories.SnakeHead
+        
         let counterClockwiseButton = SKShapeNode()
         counterClockwiseButton.path = UIBezierPath(rect: CGRect(x: 0, y: 0, width: 50, height: 50)).cgPath
         counterClockwiseButton.position = CGPoint(x: view.scene!.frame.minX + 30,
@@ -54,6 +57,7 @@ class GameScene: SKScene {
         
         createApple()
         createSnake()
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -112,16 +116,20 @@ extension GameScene: SKPhysicsContactDelegate {
             let apple = contact.bodyA.node is Apple ? contact.bodyA.node : contact.bodyB.node
             apple?.removeFromParent()
             createApple()
-            
             snake?.addBodyPart()
+            
         case CollisionCategories.EdgeOfScene:
-            // ДЗ: обработать столкновение змейки с границами экрана
-            break
+            snake?.removeFromParent()
+            snake = nil
+            
+            createSnake()
+            
         case CollisionCategories.Snake:
             snake?.removeFromParent()
             snake = nil
             
             createSnake()
+            
         default:
             break
         }

@@ -12,7 +12,7 @@ class SnakeBodyPart: SKShapeNode {
     init(atPoint point: CGPoint) {
         super.init()
         
-        path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: 12, height: 16), cornerRadius: 4).cgPath
+        path = UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: 10, height: 10)).cgPath
         
         
         fillColor = .brown
@@ -22,7 +22,7 @@ class SnakeBodyPart: SKShapeNode {
         
         self.position = point
         
-        self.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 8, height: 12))
+        self.physicsBody = SKPhysicsBody(circleOfRadius: 3, center: CGPoint(x: 5, y: 5))
         self.physicsBody?.isDynamic = true
         self.physicsBody?.categoryBitMask = CollisionCategories.Snake
         self.physicsBody?.contactTestBitMask = CollisionCategories.EdgeOfScene | CollisionCategories.Apple

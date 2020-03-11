@@ -27,7 +27,7 @@ class Snake: SKShapeNode {
     
     func addBodyPart() {
         let newBodyPart = SnakeBodyPart(atPoint: CGPoint(x: body.last!.position.x,
-                                                         y: body.last!.position.y - 16))
+                                                         y: body.last!.position.y - 8))
         body.append(newBodyPart)
         addChild(newBodyPart)
     }
@@ -55,7 +55,7 @@ class Snake: SKShapeNode {
     }
     
     func moveBodyPart(_ previous: SnakeBodyPart, current: SnakeBodyPart) {
-        let moveAction = SKAction.move(to: CGPoint(x: previous.position.x, y: previous.position.y), duration: 0.3)
+        let moveAction = SKAction.move(to: CGPoint(x: previous.position.x, y: previous.position.y), duration: 0.1)
         current.run(moveAction)
     }
     
