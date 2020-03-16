@@ -36,6 +36,12 @@ struct BlueRay: Discs {
 struct Queue<D> {
     private var elements: [D] = []
     
+    var count: Int {
+        get {
+            return self.elements.count
+        }
+    }
+    
     mutating func addToQueue(_ element: D){
         elements.append(element)
     }
@@ -61,9 +67,5 @@ bulk.addToQueue(DVD(volume: 8_500, type: "DVD-R DL"))
 bulk.addToQueue(CD(volume: 600, type: "CD-RW"))
 bulk.addToQueue(BlueRay(volume: 50_000, type: "BD-RE DL"))
 
-print(bulk[element: 1] ?? "No disc")
-print(bulk[element: 2]!)
-print(bulk[element: 3] as Any)
-print(bulk[element: 4] ?? "No disc")
-print(bulk[element: 0] ?? "No disc")
+print(bulk.count)
 
