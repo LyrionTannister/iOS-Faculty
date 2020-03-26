@@ -32,7 +32,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func loginPressed() {
-        
         let login = loginTextField.text!
         let password = passwordTextField.text!
         
@@ -43,7 +42,7 @@ class ViewController: UIViewController {
             print("Неуспешная авторизация")
         }
     }
-    
+   
             
     @objc func keyboardWasShown(notification: Notification) {
         let userInfo = (notification as NSNotification).userInfo as! [String: Any]

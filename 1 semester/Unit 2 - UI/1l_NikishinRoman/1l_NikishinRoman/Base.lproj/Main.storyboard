@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="DLk-IZ-2is">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="DLk-IZ-2is">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя пользователя" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLf-Aj-EyX">
@@ -38,7 +38,7 @@
                                         <rect key="frame" x="134" y="350" width="52" height="30"/>
                                         <state key="normal" title="  Войти"/>
                                         <connections>
-                                            <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QMK-pv-bPQ"/>
+                                            <action selector="loginPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="RVo-Ko-8l8"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пароль" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwb-nr-ecY">
@@ -63,6 +63,7 @@
                                     <constraint firstAttribute="trailing" secondItem="e4k-5F-xuT" secondAttribute="trailing" constant="25" id="qJZ-AQ-qTq"/>
                                     <constraint firstItem="HDL-3m-xqJ" firstAttribute="top" secondItem="DLk-IZ-2is" secondAttribute="top" constant="200" id="tD7-1o-I8N"/>
                                     <constraint firstItem="HAb-g4-zpb" firstAttribute="top" secondItem="DLk-IZ-2is" secondAttribute="top" constant="350" id="uTH-kg-fEa"/>
+                                    <constraint firstAttribute="bottom" secondItem="HAb-g4-zpb" secondAttribute="bottom" constant="10" id="zD0-r1-f6P"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
