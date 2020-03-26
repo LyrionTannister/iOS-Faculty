@@ -10,6 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var scrollBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var loginTextField: UITextField!
+    @IBOutlet weak var userPasswordLabel: UILabel!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(
@@ -24,9 +31,20 @@ class ViewController: UIViewController {
             object: nil)
     }
     
-
-    
+    @IBAction func loginPressed() {
         
+        let login = loginTextField.text!
+        let password = passwordTextField.text!
+        
+        
+        if login == "root" && password == "toor" {
+            print("Успешная авторизация")
+        } else {
+            print("Неуспешная авторизация")
+        }
+    }
+    
+            
     @objc func keyboardWasShown(notification: Notification) {
         let userInfo = (notification as NSNotification).userInfo as! [String: Any]
         let frame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
