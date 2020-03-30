@@ -1,0 +1,6 @@
+framework module Pods_1l_NikishinRoman {
+  umbrella header "Pods-1l_NikishinRoman-umbrella.h"
+
+  export *
+  module * { export * }
+}
