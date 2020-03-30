@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(keyboardWasShown(notification:)),
@@ -31,19 +32,43 @@ class ViewController: UIViewController {
             object: nil)
     }
     
-    @IBAction func loginPressed() {
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        switch identifier {
+        case "loginSegue":
+            
+            let isAuth = login()
+            
+            if !isAuth {
+                showErrorAlert()
+            }
+            
+            return isAuth
+        default:
+            return true
+        }
+    }
+    
+    func login() -> Bool {
         let login = loginTextField.text!
         let password = passwordTextField.text!
         
-        
-        if login == "root" && password == "toor" {
-            print("Успешная авторизация")
-        } else {
-            print("Неуспешная авторизация")
-        }
+        return login == "root" && password == "toor"
     }
-   
-            
+    
+    func showErrorAlert() {
+        // Создаем контроллер
+        let alert = UIAlertController(
+            title: "Ошибка",
+            message: "Введены неверные данные пользователя",
+            preferredStyle: .alert)
+        // Создаем кнопку для UIAlertController
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        // Добавляем кнопку на UIAlertController
+        alert.addAction(action)
+        // Показываем UIAlertController
+        present(alert, animated: true)
+    }
+    
     @objc func keyboardWasShown(notification: Notification) {
         let userInfo = (notification as NSNotification).userInfo as! [String: Any]
         let frame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! CGRect

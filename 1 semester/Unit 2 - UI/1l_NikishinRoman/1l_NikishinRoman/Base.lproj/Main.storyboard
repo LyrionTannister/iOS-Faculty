@@ -39,8 +39,7 @@
                                         <rect key="frame" x="134" y="350" width="52" height="30"/>
                                         <state key="normal" title="  Войти"/>
                                         <connections>
-                                            <action selector="loginPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="RVo-Ko-8l8"/>
-                                            <segue destination="tsq-cJ-AnO" kind="show" id="1Qv-jv-UcA"/>
+                                            <segue destination="tsq-cJ-AnO" kind="show" identifier="loginSegue" id="1Qv-jv-UcA"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пароль" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwb-nr-ecY">
