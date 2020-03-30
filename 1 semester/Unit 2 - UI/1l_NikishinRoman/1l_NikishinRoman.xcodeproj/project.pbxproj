@@ -80,7 +80,6 @@
 				7814A129BD7BDD2BB480E04C /* Pods-1l_NikishinRoman.debug.xcconfig */,
 				F413539AA0D6D1D500C7A4BF /* Pods-1l_NikishinRoman.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -103,6 +102,7 @@
 				84D231B9241BF7DD00366228 /* Sources */,
 				84D231BA241BF7DD00366228 /* Frameworks */,
 				84D231BB241BF7DD00366228 /* Resources */,
+				09CC6DA62432185B002A44C1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -160,6 +160,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		09CC6DA62432185B002A44C1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		D87C873E2C45F5A00783D6BE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

@@ -16,10 +16,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var userPasswordLabel: UILabel!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(keyboardWasShown(notification:)),
@@ -31,30 +30,23 @@ class ViewController: UIViewController {
             name: UIResponder.keyboardWillHideNotification,
             object: nil)
     }
-    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         switch identifier {
         case "loginSegue":
-            
             let isAuth = login()
-            
             if !isAuth {
                 showErrorAlert()
             }
-            
             return isAuth
         default:
             return true
         }
     }
-    
     func login() -> Bool {
         let login = loginTextField.text!
         let password = passwordTextField.text!
-        
         return login == "root" && password == "toor"
     }
-    
     func showErrorAlert() {
         // Создаем контроллер
         let alert = UIAlertController(
@@ -68,15 +60,14 @@ class ViewController: UIViewController {
         // Показываем UIAlertController
         present(alert, animated: true)
     }
-    
+    // swiftlint:disable force_cast
     @objc func keyboardWasShown(notification: Notification) {
         let userInfo = (notification as NSNotification).userInfo as! [String: Any]
         let frame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
-        
         scrollBottomConstraint.constant = frame.height
     }
-    
     @objc func keyboardWillBeHidden(notification: Notification) {
         scrollBottomConstraint.constant = 0
     }
+    // swiftlint:enable force_cast
 }
